@@ -2,30 +2,49 @@
 
 <html>
 <head>
-
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
-
+ 
 </head>
 
 <body>
+  <main>
+    <div class="marker"></div>
+    <h1>W</h1>
+    <h1 class="r">o</h1>
+    <h1 class="e1">r</h1>
+    <h1 class="s1">d</h1>
+    <h1 class="s2">G</h1>
+    <h1 class="e2">a</h1>
+    <h1>me</h1>
+  </main>
 
-  <h1>しりとり</h1>
+  <h1 class="title">しりとり</h1>
+  
   <p id="previousWord"></p>
-  <input id="nextWordInput" type="text" />
-  <button id="nextWordSendButton">送信</button>
-  <script type="module">
+  <div class="serch">
+  <input id="nextWordInput" type="text" placeholder="ここに入力"/>
+  <button id="nextWordSendButton" type="submit" onclick="createArea()">送信<i class="fas fa-search"></i></button>
+  </div>
 
+
+  <script  type="module">
+
+    //ロードされた時の画面
     window.onload = async (event) => {
 
       const response = await fetch("/shiritori");
       const previousWord = await response.text();
+
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
-
+      
     };
 
-
+    //送信ボタンが押された時のアクション
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
       const nextWord = document.querySelector("#nextWordInput").value;
 
@@ -33,7 +52,6 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nextWord })
-
       });
 
       if (response.status / 100 !== 2) {
@@ -46,10 +64,18 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
+        
+
     };
 
   </script>
 
+  <!--パスの参照が上手くいかない
+  <span>ここに追加されます↓</span>
+  <ul id="frame">
+  </ul>
+  <script type="text/javascript" src="../server.js"></script>
+  -->
 </body>
 
 </html>

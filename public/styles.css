@@ -1,5 +1,139 @@
+
+.title{
+    font-size: 8vw;
+    font-family: "Nico Moji";
+    color: aliceblue;
+    text-align: center;
+}
+
+#previousWord{
+    text-align: center;
+
+}
+
+#nextWordInput{
+    text-align: center;
+    height:50px;
+    padding:0 10px; 
+    border-radius:25px;
+    outline:0;
+    background:rgb(238, 238, 238);
+}
+
+#nextWordSendButton{
+    height:50px;
+    width:50px;	
+    right:25px; 
+    top: 0;
+    background:#7fbfff;
+    color:#fff;
+    border:none;
+    border-radius:25px 25px 0px 25px;
+}
+
+#nextWordSendButton .fa-search{
+    font-size:20px;	
+    top:30%;
+    left:30%;	
+    }
+
+#nextWordSendButton:hover{
+    color:#888;
+    }
+
+.serch{
+    text-align: center;
+}
+    
+.graph{
+    position: center;
+    margin-bottom:5px;
+  }
+  
+.th{
+    position: center;
+    width:100px;
+  }
+
+#parent{
+    position: center;
+}
+
+
+
+html { font-size: 1px; }
 body {
+  margin: 0;
 
-    background: skyblue;
+  font-size: 30rem;
+  min-height: 100vh;
 
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 200px;
+  
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6)), url(https://images.unsplash.com/photo-1493382051629-7eb03ec93ea2);
+  background-position: 50% 75%;
+  background-size: cover;
+}
+
+main {
+  position: relative;
+  display: flex;
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1 { margin: 0; }
+.marker, .r, .e1, .s1, .s2, .e2 {
+  animation-timing-function: cubic-bezier(0.15,-0.01, 0.58, 1);
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.marker {
+  position: absolute; top: 4rem; left: -3rem;
+  height: 3rem; width: 40rem;
+  background-color: rgb(0, 0, 0);
+  animation-name: marker;
+  color: aqua;
+}
+
+.r { margin-left: 1rem;   animation-name: r; }
+.e1 { margin-left: 7rem; animation-name: e1; }
+.s1 { margin-left: 10rem; animation-name: s1; }
+.s2 { margin-left: 21rem; animation-name: s2; }
+.e2 { margin: 0 36rem 0 42rem; animation-name: e2; }
+
+@keyframes r { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(35rem); }
+}
+@keyframes e1 { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(65rem); }
+}
+@keyframes s1 { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(69rem); }
+}
+@keyframes s2 { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(71rem); }
+}
+@keyframes e2 { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(34rem); }
+}
+@keyframes marker { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(385rem); }
 }
